@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+    <style>
+        .cell {
+            height: 70px;
+            width: 70px;
+            border: 1.5px solid black;
+        }
+
+        .blackcell {
+            background-color: black;
+        }
+
+        .whitecell {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var center = document.createElement('center');
+        var chessTable = document.createElement('table');
+
+        for (var a = 0; a < 8; a++) {
+            var tr = document.createElement('tr');
+
+            for (var b = 0; b < 8; b++) {
+                var td = document.createElement('td');
+
+                if ((a + b) % 2 == 0) {
+                    td.setAttribute('class', 'cell whitecell');
+                    tr.appendChild(td);
+                } else {
+                    td.setAttribute('class', 'cell blackcell');
+                    tr.appendChild(td);
+                }
+            }
+
+            chessTable.appendChild(tr);
+        }
+
+        center.appendChild(chessTable);
+
+
+        chessTable.setAttribute('cellspacing', '0');
+        chessTable.setAttribute('width', '700px');
+        document.body.appendChild(center);
+    </script>
+</body>
+
+</html>
